@@ -1,0 +1,23 @@
+Ruby Parsers:
+
+- https://github.com/whitequark/parser
+   Pros: - Parses 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5 syntax
+         - Well maintained: frequent commits + sponsored by https://evilmartians.com/
+         - All needed info present after parsing (location, comments)
+   Cons: - In ruby => a bit of friction for java integration
+         - Need rubygems (parser, ast)
+
+- JRuby
+  Pros: - Easy to integrate (simply add jruby dependency to pom)
+        - In java, so easy to get AST directly
+        - Well maintained and up-to-date
+  Cons: - No precise location information on nodes (only start line)
+        - No comment information
+
+- JRubyParser
+   Pros: - Based on JRuby
+         - Provides location information
+         - Provides comment information
+   Cons: - Not well maintained anymore
+         - Last release on maven repo is from 2014
+         - Based on old version of JRuby (currently only support up to 2.3)
